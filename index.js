@@ -1,7 +1,7 @@
 var entries = localStorage.getItem("entries")
   ? JSON.parse(localStorage.getItem("entries"))
   : [];
-var res = {};
+
 function updateTable() {
   let entries_table = document.getElementById("entries_table");
   for (let i = 1; i < entries_table.rows.length; i++) {
@@ -25,6 +25,7 @@ function updateTable() {
 updateTable();
 document.getElementById("reg_form").addEventListener("submit", function (e) {
   e.preventDefault();
+  var res = {};
   const data = new FormData(document.getElementById("reg_form"));
   for (const [name, value] of data) {
     res[name] = value;
