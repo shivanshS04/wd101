@@ -10,6 +10,7 @@ document.getElementById("reg_form").addEventListener("submit", function (e) {
   }
   entries.push(res);
   localStorage.setItem("entries", JSON.stringify(entries));
+  location.reload();
 });
 
 let entries_table = document.getElementById("entries_table");
